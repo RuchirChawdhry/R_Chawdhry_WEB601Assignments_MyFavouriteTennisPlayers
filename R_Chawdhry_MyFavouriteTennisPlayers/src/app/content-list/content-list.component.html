@@ -1,0 +1,49 @@
+<div class="input">
+    <input type="text" name="title" [(ngModel)]="title">
+    <button (click)="checkTitle()">Submit</button>
+</div>
+
+<p class="message" [style.color]="isFound ? 'green' : 'red'">
+    {{ message }}
+</p>
+  
+<div class="container">
+<div class="card-none">
+    <h2>No Type</h2>
+    <app-content-card *ngFor="let item of contentArray | filterType:''" [content]="item"></app-content-card>
+</div>
+
+<div class="card-drama">
+    <h2>Clay Court Specialist</h2>
+    <app-content-card *ngFor="let item of contentArray | filterType:'Clay Court Specialist'" [content]="item"></app-content-card>
+</div>
+
+<div class="card-horror">
+    <h2>All-Court Player</h2>
+    <app-content-card *ngFor="let item of contentArray | filterType:'All-Court Player'" [content]="item"></app-content-card>
+</div>
+
+<div class="card-fantasy">
+    <h2>Hard Court Specialist</h2>
+    <app-content-card *ngFor="let item of contentArray | filterType:'Hard Court Specialist'" [content]="item"></app-content-card>
+</div>
+
+<div class="card-comedy">
+    <h2>Power Baseline Player</h2>
+    <app-content-card *ngFor="let item of contentArray | filterType:'Power Baseline Player'" [content]="item"></app-content-card>
+</div>
+
+<div class="card-scifi">
+    <h2>Counterpuncher</h2>
+    <app-content-card *ngFor="let item of contentArray | filterType:'Counterpuncher'" [content]="item"></app-content-card>
+</div>
+
+</div>
+
+<!-- <div>
+    <app-content-card *ngFor="let item of contentArray.slice(0, 5)" [content]="item"></app-content-card>
+</div> 
+
+[ngClass]="{ 'card-Fantasy': true }"
+-->
+  
