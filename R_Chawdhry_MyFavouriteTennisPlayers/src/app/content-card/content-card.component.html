@@ -1,0 +1,26 @@
+<!-- can also do is first -->
+<!-- <div class="card" [style.border]="content.id === 1 ? '2px solid black' : '1px solid pink'"> -->
+  <div class="card">
+    <h3 class="heading">{{ content.title }}</h3>
+    
+    <img class="img" *ngIf="content.imgURL; else defaultImage" [src]="content.imgURL" (click)="showDetails()"/>
+  
+    <ng-template #defaultImage>
+      <img class="default-img" src="https://www.clubatharperspoint.com/wp-content/uploads/2016/05/tennis-player-header.png" (click)="showDetails()"/>
+    </ng-template>
+    
+    <div class="container">
+      <p>Description: {{ content.description }}</p>
+     
+      <p>Nationality: {{ content.nationality }}</p>
+     
+      <p appHoverAffect typeStyle="textDecoration">Type: {{ content.type }}</p>
+     
+      <div>Tags: 
+        <div class="list" *ngFor="let tag of content.tags" appHoverAffect tagStyle="fontWeight">
+          {{tag}}
+        </div>
+      </div>
+    </div>
+  </div>
+  
